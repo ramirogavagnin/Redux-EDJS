@@ -9,3 +9,8 @@ export const deleteFavorite = payload => ({
     type: types.DELETE_FAVORITE,
     payload,
 })
+
+export const loginRequest = payload => ({
+    type: types.LOGIN_REQUEST,
+    payload,
+})
