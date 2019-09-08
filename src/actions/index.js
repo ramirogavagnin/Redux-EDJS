@@ -19,3 +19,8 @@ export const logoutRequest = payload => ({
     type: types.LOGOUT_REQUEST,
     payload,
 })
+
+export const registerRequest = payload => ({
+    type: types.REGISTER_REQUEST,
+    payload,
+})

@@ -20,7 +20,11 @@ const CarouselItem = props => {
             <img className="carousel-item__img" src={cover} alt={title} />
             <div className="carousel-item__details">
                 <div>
-                    <img className="carousel-item__details--img" src={playIcon} alt="Play Icon" />
+                    <img
+                        className="carousel-item__details--img"
+                        src={playIcon}
+                        alt="Play Icon"
+                    />
                     {isList ? (
                         <img
                             className="carousel-item__details--img"
