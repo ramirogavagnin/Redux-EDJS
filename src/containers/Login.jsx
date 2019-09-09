@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { loginRequest } from '../actions'
@@ -74,6 +75,12 @@ const Login = props => {
         </section>
     )
 }
+
+Login.propTypes = {
+    history: PropTypes.object,
+    loginRequest: PropTypes.func,
+}
+
 const mapDispatchToProps = {
     loginRequest,
 }

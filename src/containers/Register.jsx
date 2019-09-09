@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { registerRequest } from '../actions'
@@ -58,6 +59,12 @@ const Register = props => {
         </section>
     )
 }
+
+Register.propTypes = {
+    registerRequest: PropTypes.func,
+    history: PropTypes.object,
+}
+
 const mapDispatchToProps = {
     registerRequest,
 }

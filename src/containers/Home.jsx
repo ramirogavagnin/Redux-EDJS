@@ -1,5 +1,6 @@
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import Search from '../components/Search'
 import Categories from '../components/Categories'
 import Carousel from '../components/Carousel'
@@ -47,6 +48,13 @@ const Home = ({ mylist, trends, originals, searchResults }) => {
     )
 }
 
+Home.propTypes = {
+    mylist: PropTypes.object,
+    trends: PropTypes.object,
+    originals: PropTypes.object,
+    searchResults: PropTypes.object,
+}
+
 const mapStateToProps = state => {
     return {
         mylist: state.myList,
@@ -55,6 +63,7 @@ const mapStateToProps = state => {
         searchResults: state.searchResults,
     }
 }
+
 export default connect(
     mapStateToProps,
     null

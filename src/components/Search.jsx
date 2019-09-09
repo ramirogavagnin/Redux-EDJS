@@ -1,5 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
+import PropTypes from 'prop-types'
 import classNames from 'classnames'
 import { searchVideo } from '../actions'
 import '../assets/styles/components/Search.scss'
@@ -27,6 +28,11 @@ const Search = ({ isHome, searchVideo }) => {
 
 const mapDispathToProps = {
     searchVideo,
+}
+
+Search.propTypes = {
+    isHome: PropTypes.bool,
+    searchVideo: PropTypes.func,
 }
 
 export default connect(
