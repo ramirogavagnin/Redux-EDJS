@@ -26,6 +26,29 @@ const reducer = (state, action) => {
                     ) ||
                     [],
             }
+        case types.SEARCH_VIDEO:
+            if (action.payload === '') {
+                return {
+                    ...state,
+                    searchResults: [],
+                }
+            } else {
+                return {
+                    ...state,
+                    searchResults:
+                        state.trends.filter(item =>
+                            item.title
+                                .toLowerCase()
+                                .includes(action.payload.toLowerCase())
+                        ) ||
+                        state.originals.filter(item =>
+                            item.title
+                                .toLowerCase()
+                                .includes(action.payload.toLowerCase())
+                        ) ||
+                        [],
+                }
+            }
 
         default:
             return state

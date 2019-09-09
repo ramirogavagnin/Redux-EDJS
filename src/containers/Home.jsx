@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 import Search from '../components/Search'
 import Categories from '../components/Categories'
@@ -7,10 +7,19 @@ import CarouselItem from '../components/CarouselItem'
 import useInitialState from '../hooks/useInitialState'
 import '../assets/styles/App.scss'
 
-const Home = ({ mylist, trends, originals }) => {
+const Home = ({ mylist, trends, originals, searchResults }) => {
     return (
         <Fragment>
             <Search isHome />
+            {searchResults.length > 0 && (
+                <Categories title="Resultados">
+                    <Carousel>
+                        {searchResults.map(item => (
+                            <CarouselItem key={item.id} {...item} />
+                        ))}
+                    </Carousel>
+                </Categories>
+            )}
             {mylist.length > 0 && (
                 <Categories title="Mi Lista">
                     <Carousel>
@@ -43,6 +52,7 @@ const mapStateToProps = state => {
         mylist: state.myList,
         trends: state.trends,
         originals: state.originals,
+        searchResults: state.searchResults,
     }
 }
 export default connect(

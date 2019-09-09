@@ -5,4 +5,5 @@ export const types = {
     LOGOUT_REQUEST: 'logout_request',
     REGISTER_REQUEST: 'register_request',
     GET_VIDEO_SOURCE: 'get_video_source',
+    SEARCH_VIDEO: 'search_video',
 }

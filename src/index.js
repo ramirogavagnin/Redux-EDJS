@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { createStore } from 'redux'
+import { createStore, compose } from 'redux'
 import reducer from './reducers/index'
 import App from './routes/App'
 
@@ -10,6 +10,7 @@ const initialState = {
     player: {},
     playing: {},
     myList: [],
+    searchResults: [],
     trends: [
         {
             id: 2,
@@ -172,7 +173,9 @@ const initialState = {
     ],
 }
 
-const store = createStore(reducer, initialState)
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+// Esta función conecta mi store con las Redux DevTools del navegador
+const store = createStore(reducer, initialState, composeEnhancers())
 
 ReactDOM.render(
     <Provider store={store}>
