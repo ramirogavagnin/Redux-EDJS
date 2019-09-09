@@ -49,10 +49,10 @@ const Home = ({ mylist, trends, originals, searchResults }) => {
 }
 
 Home.propTypes = {
-    mylist: PropTypes.object,
-    trends: PropTypes.object,
-    originals: PropTypes.object,
-    searchResults: PropTypes.object,
+    mylist: PropTypes.array,
+    trends: PropTypes.array,
+    originals: PropTypes.array,
+    searchResults: PropTypes.array,
 }
 
 const mapStateToProps = state => {

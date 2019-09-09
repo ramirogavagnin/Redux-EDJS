@@ -28,7 +28,7 @@ const reducer = (state, action) => {
                     state.originals.find(
                         item => item.id === Number(action.payload)
                     ) ||
-                    [],
+                    {},
             }
         case types.SEARCH_VIDEO:
             if (action.payload === '') {
