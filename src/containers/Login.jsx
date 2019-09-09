@@ -28,7 +28,10 @@ const Login = props => {
         <section className="login">
             <section className="login__container">
                 <h2>Inicia sesión</h2>
-                <form className="login__container--form" onSubmit={handleSubmit}>
+                <form
+                    className="login__container--form"
+                    onSubmit={handleSubmit}
+                >
                     <input
                         name="email"
                         className="input"
@@ -45,7 +48,11 @@ const Login = props => {
                     <button className="button">Iniciar sesión</button>
                     <div className="login__container--remember-me">
                         <label>
-                            <input type="checkbox" id="cbox1" value="first_checkbox" />
+                            <input
+                                type="checkbox"
+                                id="cbox1"
+                                value="first_checkbox"
+                            />
                             Recuérdame
                         </label>
                         <a href="/">Olvidé mi contraseña</a>
@@ -60,7 +67,7 @@ const Login = props => {
                     </div>
                 </section>
                 <p className="login__container--register">
-                    No tienes ninguna cuenta
+                    No tienes ninguna cuenta{' '}
                     <Link to="/register">Regístrate</Link>
                 </p>
             </section>
