@@ -1,4 +1,5 @@
 import { types } from '../constants/types'
+import _ from 'lodash'
 const reducer = (state, action) => {
     switch (action.type) {
         case types.SET_FAVORITE:
@@ -6,7 +7,10 @@ const reducer = (state, action) => {
         case types.DELETE_FAVORITE:
             return {
                 ...state,
-                myList: state.myList.filter(item => item.id !== action.payload),
+                myList: _.filter(
+                    state.myList,
+                    item => item.id !== action.payload
+                ),
             }
         case types.LOGIN_REQUEST:
             return { ...state, user: action.payload }
@@ -36,12 +40,12 @@ const reducer = (state, action) => {
                 return {
                     ...state,
                     searchResults:
-                        state.trends.filter(item =>
+                        _.filter(state.trends, item =>
                             item.title
                                 .toLowerCase()
                                 .includes(action.payload.toLowerCase())
                         ) ||
-                        state.originals.filter(item =>
+                        _.filter(state.originals, item =>
                             item.title
                                 .toLowerCase()
                                 .includes(action.payload.toLowerCase())
