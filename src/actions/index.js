@@ -24,3 +24,8 @@ export const registerRequest = payload => ({
     type: types.REGISTER_REQUEST,
     payload,
 })
+
+export const getVideoSource = payload => ({
+    type: types.GET_VIDEO_SOURCE,
+    payload,
+})
